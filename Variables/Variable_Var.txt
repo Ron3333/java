@@ -1,0 +1,20 @@
+En Java, hay dos tipos de variables que pueden inferir su tipo de manera flexible:
+
+### 1. **Variables con `var` (desde Java 10 - Local-Variable Type Inference)**
+   - Introducido en Java 10 como parte de **JEP 286**.
+   - Permite declarar variables locales **sin especificar el tipo explícitamente**, ya que el compilador lo infiere del valor asignado.
+   - Solo funciona para:
+     - Variables locales (no campos de clase, parámetros de métodos o retornos).
+     - Debe inicializarse en la misma línea (no puede ser `null` sin contexto).
+
+   **Ejemplo:**
+   ```java
+   var nombre = "Juan";      // Infiere String
+   var edad = 25;            // Infiere int
+   var lista = new ArrayList<String>(); // Infiere ArrayList<String>
+   ```
+
+   **Limitaciones:**
+   - No se puede usar en variables de clase (`class A { var x = 10; }` ❌).
+   - No se puede usar para parámetros de métodos o retornos.
+
